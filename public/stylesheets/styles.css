@@ -1,0 +1,257 @@
+.skippr{width:100%;height:100%;position:relative;overflow:hidden}.skippr>div{position:absolute;width:100%;height:100%;background-size:cover;background-position:50% 62.5%}.skippr>img{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);width:100%;min-height:100%}.skippr-nav-container{position:absolute;left:50%;-webkit-transform:translate(-50%, 0);transform:translate(-50%, 0);-moz-transform:translate(-50%, 0);-ms-transform:translate(-50%, 0);bottom:25px;overflow:auto;z-index:999}.skippr-nav-element{cursor:pointer;float:left;background-color:rgba(255,255,255,0.5);-webkit-transition:all .25s linear;transition:all .25s linear}.skippr-nav-element-bubble{width:12px;height:12px;border-radius:50%;margin:0 4px}.skippr-nav-element-block{width:60px;height:10px}.skippr-nav-element:hover,.skippr-nav-element-active{background-color:#fff}.skippr-arrow{position:absolute;z-index:999;top:50%;-webkit-transform:translate(0%, -50%);-moz-transform:translate(0%, -50%);-ms-transform:translate(0%, -50%);transform:translate(0%, -50%);width:30px;height:30px;transform-origin:center center;-webkit-transform-origin:top left;cursor:pointer}.skippr-previous{left:2.5%;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);border-top:2px solid white;border-left:2px solid white}.skippr-next{right:3.5%;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);border-bottom:2px solid white;border-right:2px solid white}
+/*# sourceMappingURL=skippr.css.map */
+
+img.emoji {
+// Override any img styles to ensure Emojis are displayed inline
+margin: 0px !important;
+  display: inline !important;
+}
+
+
+html,body {padding:0; margin:0 auto;}
+body {
+  background-color: #FFAFAF;
+  background-image: url('../images/patterntandb.png');
+  -webkit-background-size: 600px;
+  background-size: 600px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+h1 {
+  font-family: 'Concert One';
+  color: white;
+  text-align: center;
+}
+
+hr {
+  border-top: 1px solid #FFAFAF;
+  margin-top: 15px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.header {
+  width: 100%;
+  margin-top: 0px;
+
+}
+
+.post {
+  width: 90%;
+  background-color: #FFF;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-align: left;
+  box-shadow: 2px 2px 10px #000
+}
+
+a .post-title {
+  font-family: 'Concert One';
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: black;
+}
+
+.post-img {
+  width: 100%;
+  padding-top: 10px;
+  height: auto;
+  max-height: 300px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.navbar-default {
+  background-color: #CDCDCD;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.navbar-default .navbar-brand {
+  font-size: 38px;
+  color: white;
+}
+
+.navbar-default .navbar-toggle {
+  background-color: #FFAFAF;
+  border: none;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: white;
+  background-color: #FFAFAF;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+#videoHolder, #sliderContainer, #theTarget {
+  height: 230px;
+  width: 100%;
+  max-width: 750px;
+}
+
+
+.skippr-nav-element-bubble {
+  display: none !important;
+}
+.featuredFlag {
+  position: absolute;
+  top: 16px;
+  height: 31px;
+  z-index: 10;
+}
+
+.featureSlider {
+  position: relative;
+}
+
+.featuredTitle {
+  text-align: left;
+  font-size: 31px;
+  position: absolute;
+  top: 110px;
+  left: 15px;
+}
+
+.skippr-previous {
+  top: 90px;
+}
+
+.skippr-next {
+  right: 5.5%;
+  top: 90px;
+}
+.featuredName {
+  color: white;
+  position: absolute;
+  top: 200px;
+  left: 17px;
+}
+
+#nav-text {
+  font-family: 'Concert One';
+}
+.post-small-title {
+  color: #858585;
+  font-family: 'Concert One';
+  text-align: left;
+  padding-top: 4px;
+  font-size: 16px;
+  border-bottom: 1px solid #FFAFAF;
+}
+
+.post-divider {
+  border-top: 1px solid #FFAFAF;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.post-content {
+  width: 92%;
+  margin: 0 auto;
+}
+
+.pink {
+  color: #FFAFAF;
+}
+
+.post-author {
+  color: #979797;
+  padding-bottom: 5px;
+}
+
+.headerContainer {
+  background-color: lightgray;
+}
+
+.article {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.article-long-title h1 {
+  color: black;
+  text-align: left;
+  font-size: 25px;
+}
+
+.article .header {
+  padding: 15px 5px 0px 5px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.wrapper-article {
+  margin: 0 auto;
+  background-color: white;
+  margin-top: -20px;
+}
+
+.wide-image {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.img-caption {
+  font-family: 'Concert One';
+  position: relative;
+  left: 15px;
+  bottom: 30px;
+  color: white;
+  font-size: 18px;
+}
+
+.article-text {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 33px;
+  margin-top: -12px;
+}
+
+.restaurant-name {
+  font-family: 'Concert One';
+  font-size: 25px;
+  text-align: center;
+  color: gray;
+}
+
+.summary-label {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.summary hr {
+  margin-top: 0px;
+}
+
+.overall p {
+  font-size: 40px;
+  display: inline-block;
+}
+
+.greyed {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+form input {
+  width: 300px;
+}
+
+form textarea {
+  width: 300px;
+}

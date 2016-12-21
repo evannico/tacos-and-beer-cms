@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Tacos And Beer</title>
+  <meta name="generator" content="Tacos And Beer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Bootstrap CSS-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- jQuery-->
+  <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+
+  <!-- Bootstrap JS-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+
+  <script src="/javascripts/app.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="nav-text" class="navbar-brand" href="/">&#x1F32E;&#x1F37A;.ws</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Featured</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cities <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Santa Monica</a></li>
+            <li><a href="#">WeHo</a></li>
+            <li><a href="#">Venice</a></li>
+            <li><a href="#">West LA</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="wrapper-article">
+  <div class="article">
+    <div class="header">
+      <div class="article-long-title"><h1><%=posts[0]['longTitle']%></h1></div>
+      <div class="article-small-title"><h4><%=posts[0]['smallTitle']%></h4></div>
+      <div class="post-author">by <span class="pink"><%=posts[0]['author']%></span> <%=posts[0]['date']%></div>
+      <hr class="pink">
+    </div>
+    <div class="wide-image">
+      <img class="post-img" src=<%=posts[0]['imageLink']%>  alt=<%=posts[0]['imageCaption']%> />
+      <p class="img-caption">"<%=posts[0]['imageCaption']%>"</p>
+    </div>
+    <div class="article-text">
+      <p><%=posts[0]['paragraph']%></p>
+      <hr>
+      <div class="summary">
+        <p class="restaurant-name"><%=posts[0]['restName']%></p>
+        <h4 class="summary-label">LOCATION</h4>
+        <hr>
+        <p><%=posts[0]['restLocation']%></p>
+        <h4 class="summary-label">PHONE NUMBER</h4>
+        <hr>
+        <p><%=posts[0]['restPhone']%></p>
+        <h4 class="summary-label">HOURS</h4>
+        <hr>
+        <p><%=posts[0]['restHours']%></p>
+        <h4 class="summary-label">MENU</h4>
+        <hr>
+        <a href= <%=posts[0]['restMenuLink']%> ><p><%=posts[0]['restMenuLink']%></p></a>
+      </div>
+      <div class="overall">
+        <h4 class="summary-label">OVERALL</h4>
+        <hr>
+        <div class="taco">
+            <% for (var j=0; j < posts[0]['taco']; j++ ) {%>
+          <p>&#x1F32E;</p>
+            <%} %>
+            <% for (var j=5; j > posts[0]['taco']; j-- ) {%>
+          <p class="greyed">&#x1F32E;</p>
+            <%} %>
+        </div>
+        <div class="beer">
+            <% for (var j=0; j < posts[0]['beer']; j++ ) {%>
+          <p>&#x1F37A;</p>
+            <%} %>
+            <% for (var j=5; j > posts[0]['beer']; j-- ) {%>
+          <p class="greyed">&#x1F37A;</p>
+            <%} %>
+        </div>
+        <div class="money">
+            <% for (var j=0; j < posts[0]['money']; j++ ) {%>
+          <p>&#x1f4b8;</p>
+            <%} %>
+            <% for (var j=5; j > posts[0]['money']; j-- ) {%>
+          <p class="greyed">&#x1f4b8;</p>
+            <%} %>
+        </div>
+        <div class="lit">
+            <% for (var j=0; j < posts[0]['lit']; j++ ) {%>
+          <p>&#x1f525;</p>
+            <%} %>
+            <% for (var j=5; j > posts[0]['lit']; j-- ) {%>
+          <p class="greyed">&#x1f525;</p>
+            <%} %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 200px"></div>
+</div>
+
+
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+        <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+        <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+        <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+
+      </div>
+      <div class="col-sm-6">
+        <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="">tacos and beer</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- script references -->
+
+</body>
+</html>

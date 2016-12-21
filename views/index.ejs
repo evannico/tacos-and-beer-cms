@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Tacos And Beer</title>
+		<meta name="generator" content="Tacos And Beer" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- Bootstrap CSS-->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- jQuery-->
+        <script
+              src="https://code.jquery.com/jquery-3.1.1.min.js"
+              integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+              crossorigin="anonymous"></script>
+
+        <!-- Bootstrap JS-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+
+        <script src="/javascripts/app.js"></script>
+
+      <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <![endif]-->
+
+	</head>
+	<body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="nav-text" class="navbar-brand" href="index.html">&#x1F32E;&#x1F37A;.ws</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Featured</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cities <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Santa Monica</a></li>
+                <li><a href="#">WeHo</a></li>
+                <li><a href="#">Venice</a></li>
+                <li><a href="#">West LA</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="wrapper">
+      <div class="headerContainer">
+        <div id="videoHolder">
+          <div id="sliderContainer">
+            <div id="theTarget">
+              <% for(var i=0; i<posts.length;i++){
+              if(posts[i]['featured'] == true) {
+              %>
+              <div style= "background-image: url(images/tacotest.png)" class="featureSlider">
+                <img class="featuredFlag" src="images/FeaturedFlag2x.png">
+                <h1 class="featuredTitle"><%=posts[i]['longTitle']%></h1>
+                <p class="featuredName">By <%=posts[i]['author']%></p>
+              </div>
+              <%}}%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% console.log(posts) %>
+      <% for(var i=0; i<posts.length;i++){
+        if(posts[i]['featured']== false) {
+      %>
+
+      <div class="post" id= <%=posts[i]['_id'] %>>
+        <div class="post-content">
+          <div class="post-small-title">
+            <%=posts[i]['smallTitle']%></div>
+          <img class = "post-img" src="images/leos.png" alt="tacos and beer"/>
+          <a href='articles/<%= posts[i]['_id'] %>'>
+            <div class="post-title"><%=posts[i]['longTitle']%></div>
+          </a>
+          <div class="post-author">by <span class="pink"><%=posts[i]['author']%></span> <%=posts[i]['date']%></div>
+        </div>
+      </div>
+
+      <%}}%>
+      <div style="height: 200px"></div>
+    </div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="">tacos and beer</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+    <script src="javascripts/skippr.js"></script>
+	</body>
+</html>

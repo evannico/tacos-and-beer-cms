@@ -39,6 +39,10 @@ hr {
 
 }
 
+.container-fluid {
+  max-width: 800px;
+}
+
 .post {
   width: 90%;
   background-color: #FFF;
@@ -197,6 +201,7 @@ a .post-title {
   margin: 0 auto;
   background-color: white;
   margin-top: -20px;
+  max-width: 800px;
 }
 
 .wide-image {

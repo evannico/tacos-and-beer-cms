@@ -15,15 +15,20 @@ router.post('/addArticle', function(req, res) {
     var smallTitle = req.body.smallTitle;
     var longTitle = req.body.longTitle;
     var author = req.body.author;
-    var featured = false;
-    if (req.body.featured == "true") {
+    var list;
+    if (req.body.List == "true") {
+        list = true;
+    } else {
+        list = false;
+    }
+    var featured;
+
+    if (req.body.Featured == "true") {
         featured = true;
+    } else {
+        featured = false;
     }
 
-    var list = false;
-    if(req.body.list == "true") {
-        list = true;
-    }
     var imageLink = req.body.imageLink;
     var image = req.body.articleImage;
     var imageCaption = req.body.imageCaption;

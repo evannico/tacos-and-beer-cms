@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
         var col = db.collection('articles');
         //get home page articles
-        col.find({}).limit(6).toArray(function(err, docs) {
+        col.find({}).toArray(function(err, docs) {
             db.close();
             res.render('index', {posts: docs});
         });

@@ -8,45 +8,42 @@ var url = 'mongodb://evannico:tacoandbeeradmin1@ds015774.mlab.com:15774/tacos-an
 
 /* GET dashboard page. */
 router.get('/', function(req, res, next) {
-    res.render('dashboard');
+    res.render('listDashboard');
 });
 
+
 router.post('/addArticle', function(req, res) {
+
+    console.log(req.body);
+
+    var city = req.body.city;
+    var date = req.body.date;
     var smallTitle = req.body.smallTitle;
     var longTitle = req.body.longTitle;
     var author = req.body.author;
-    var list;
-    if (req.body.List == "true") {
-        list = true;
-    } else {
-        list = false;
-    }
+    var list = true;
     var featured;
-
     if (req.body.Featured == "true") {
         featured = true;
     } else {
         featured = false;
     }
+    var restaurantsArray = [];
 
-    var imageLink = req.body.imageLink;
-    var image = req.body.articleImage;
-    var imageCaption = req.body.imageCaption;
-    var paragraph = req.body.paragraph;
-    var restName = req.body.restName;
-    var restLocation = req.body.restLocation;
-    var restPhone = req.body.restPhone;
-    var restHours = req.body.restHours;
-    var restMenuLink = req.body.restMenuLink;
-    var taco = parseInt(req.body.taco);
-    var beer = parseInt(req.body.beer);
-    var money = parseInt(req.body.money);
-    var lit = parseInt(req.body.lit);
+    for (var i=0; i<req.body.imageLink.length; i++) {
+        restaurantsArray.push({
+            "restName": req.body.restName[i],
+            "restImageLink": req.body.imageLink[i],
+            "restDescription": req.body.paragraph[i],
+            "restAddress": req.body.restLocation[i],
+            "restPhone": req.body.restPhone[i],
+            "restURL": req.body.restURL[i]
+        })
+    }
+
     var tags = req.body.tags.toLowerCase();
 
     var tagsArray = [];
-
-    console.log(req.body);
 
     var nowhite = tags.replace(/ /g,'');
     var split = nowhite.split(',');
@@ -54,6 +51,7 @@ router.post('/addArticle', function(req, res) {
     for (var i=0; i<split.length;i++) {
         tagsArray.push(split[i]);
     }
+
 
 
     // var saved = false;
@@ -65,26 +63,17 @@ router.post('/addArticle', function(req, res) {
 
         // Insert a single document
         db.collection('articles').insertOne({
+            city: city,
+            date: date,
             smallTitle: smallTitle,
             longTitle: longTitle,
             author: author,
             featured: featured,
             list: list,
-            imageLink: imageLink,
-            image: image,
-            imageCaption: imageCaption,
-            paragraph: paragraph,
-            restName: restName,
-            restLocation: restLocation,
-            restPhone: restPhone,
-            restHours: restHours,
-            restMenuLink: restMenuLink,
-            taco: taco,
-            beer: beer,
-            money: money,
-            lit: lit,
+            restaurants: restaurantsArray,
             tags: tagsArray
-        }, function(err, r) {
+        }
+        , function(err, r) {
             assert.equal(null, err);
             assert.equal(1, r.insertedCount);
             console.log("entry saved");

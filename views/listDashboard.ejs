@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+        <%- include partials/head.ejs %>
+
+
+
+      <script>
+
+      </script>
+
+	</head>
+	<body style="background: lightgray">
+
+    <%- include partials/nav.ejs %>
+
+    <div class="wrapper" style="margin-top:50px;padding-left:10px;">
+      <a href="/articleDashboard"><p>Head to Article Dashboard</p></a>
+      <h1>Add A List Article</h1>
+      <form action="/listdashboard/addArticle" method="POST" id="listForm">
+        <div class="form-group">
+          <label for="cityInput">City</label>
+          <input type="text" placeholder="City" name="city">
+        </div>
+        <div class="form-group">
+          <label for="smallTitleInput">Short Title</label>
+          <input type="text" placeholder="Short Title" name="smallTitle">
+        </div>
+        <div class="form-group">
+          <label for="longTitleInput">Long Title</label>
+          <input type="text" placeholder="Long Title" name="longTitle">
+        </div>
+        <div class="form-group">
+          <label for="authorInput">Author</label>
+          <input type="text" placeholder="Author" name="author">
+        </div>
+        <div class="form-group">
+          <label for="dateInput">Date</label>
+          <input type="date" placeholder="Date" name="date">
+        </div>
+        <div class="form-group">
+          <label for="featuredInput">Featured</label>
+          <select name="Featured">
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+        </div>
+        <div class="form-group" style="visibility: hidden">
+          <label for="listInput">List</label>
+          <select name="List">
+            <option value="true">True</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="tagsInput">Tags</label>
+          <input type="text" placeholder="Noah Johnson, DTLA, Tacos" name="tags">
+        </div>
+        <div class="list-item">
+          <div class="form-group">
+            <label for="listInput">Image Link(Post Image Direct Link)</label>
+            <input type="text" placeholder="Image Link" name="imageLink">
+          </div>
+          <div class="form-group">
+            <label for="paragraphInput">Restaurant Description</label>
+            <textarea type="text" placeholder="Article Text" name="paragraph"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="restNameInput">Restaurant Name</label>
+            <input type="text" placeholder="Restaurant Name" name="restName">
+          </div>
+          <div class="form-group">
+            <label for="restLocationInput">Restaurant Location</label>
+            <input type="text" placeholder="1515 S La Brea Ave, Los Angeles, CA 90019" name="restLocation">
+          </div>
+          <div class="form-group">
+            <label for="restPhoneInput">Restaurant Phone Number</label>
+            <input type="text" placeholder="(323) 346-2001" name="restPhone">
+          </div>
+          <div class="form-group">
+            <label for="restPhoneInput">Restaurant Website</label>
+            <input type="text" placeholder="http://www.leostacostruck.com" name="restURL">
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="add-list-item">Add Item</div>
+    </div>
+
+    <%- include partials/footer.ejs %>
+	<!-- script references -->
+    <script src="javascripts/skippr.js"></script>
+    <script>
+        $("#add-list-item").on("click", function () {
+            $(".list-item").append(
+                '<div class="form-group">\
+                  <label for="listInput">Image Link(Post Image Direct Link)</label>\
+                  <input type="text" placeholder="Image Link" name="imageLink">\
+                </div>\
+                <div class="form-group">\
+                  <label for="paragraphInput">Restaurant Description</label>\
+                  <textarea type="text" placeholder="Article Text" name="paragraph"></textarea>\
+                </div>\
+                <div class="form-group">\
+                  <label for="restNameInput">Restaurant Name</label>\
+                  <input type="text" placeholder="Restaurant Name" name="restName">\
+                </div>\
+                <div class="form-group">\
+                  <label for="restLocationInput">Restaurant Location</label>\
+                  <input type="text" placeholder="1515 S La Brea Ave, Los Angeles, CA 90019" name="restLocation">\
+                </div>\
+                <div class="form-group">\
+                  <label for="restPhoneInput">Restaurant Phone Number</label>\
+                  <input type="text" placeholder="(323) 346-2001" name="restPhone">\
+                </div>\
+                <div class="form-group">\
+                <label for="restPhoneInput">Restaurant Website</label>\
+            <input type="text" placeholder="http://www.leostacostruck.com" name="restURL">\
+                </div>'
+            )
+        });
+    </script>
+	</body>
+</html>

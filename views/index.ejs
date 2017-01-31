@@ -20,7 +20,7 @@
               <div style= "background-image: url(<%=posts[i]['imageLink']%>)" class="featureSlider">
                 <a href='articles/<%= posts[i]['_id'] %>'>
                   <img class="featuredFlag" src="images/FeaturedFlag2x.png">
-                  <h1 class="featuredTitle"><%=posts[i]['longTitle']%></h1>
+                  <h1 class="featuredTitle"><%=posts[i]['smallTitle']%></h1>
                 </a>
                 <p class="featuredName">By <%=posts[i]['author']%></p>
               </div>
@@ -32,7 +32,7 @@
 
       <% console.log(posts) %>
       <% for(var i=0; i<posts.length;i++){
-        if(posts[i]['featured']== false) {
+        if(posts[i]['list'] == false) {
       %>
 
       <div class="post" id= <%=posts[i]['_id'] %>>
@@ -46,6 +46,19 @@
           <div class="post-author">by <span class="pink"><%=posts[i]['author']%></span> <%=posts[i]['date']%></div>
         </div>
       </div>
+      <%} else {%>
+      <div class="post" id= <%=posts[i]['_id'] %>>
+        <div class="post-content">
+          <div class="post-small-title">
+              <%=posts[i]['city']%></div>
+            <a href='articles/list/<%= posts[i]['_id'] %>'>
+              <img class = "post-img" src="<%=posts[i]['restaurants'][0]['restImageLink']%>" alt="<%=posts[i]['longTitle']%>"/>
+              <div class="post-title"><%=posts[i]['longTitle']%></div>
+            </a>
+            <div class="post-author">by <span class="pink"><%=posts[i]['author']%></span> <%=posts[i]['date']%></div>
+        </div>
+      </div>
+
 
       <%}}%>
       <div style="height: 200px"></div>

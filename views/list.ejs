@@ -1,145 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>Tacos And Beer</title>
-		<meta name="generator" content="Tacos And Beer" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!-- bower:css -->
-        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
-        <!-- endbower -->
-        <!-- bower:js -->
-        <script src="/lib/jquery/dist/jquery.js"></script>
-        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <!-- endbower -->
-        <!-- inject:css -->
-        <link rel="stylesheet" href="/css/styles.css">
-        <!-- endinject -->
-        <!-- inject:js -->
-        <script src="/js/app.js"></script>
-        <!-- endinject -->
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-	<body>
+<head>
+    <%- include partials/head.ejs %>
+</head>
+<body>
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a id="nav-text" class="navbar-brand" href="index.html">&#x1F32E;&#x1F37A;.ws</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Featured</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">About</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cities <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Santa Monica</a></li>
-                <li><a href="#">WeHo</a></li>
-                <li><a href="#">Venice</a></li>
-                <li><a href="#">West LA</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-<!--<header class="navbar navbar-bright navbar-fixed-top" role="banner">-->
-  <!--<div class="container">-->
-    <!--<div class="navbar-header">-->
-      <!--<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">-->
-        <!--<span class="sr-only">Toggle navigation</span>-->
-        <!--<span class="icon-bar"></span>-->
-        <!--<span class="icon-bar"></span>-->
-        <!--<span class="icon-bar"></span>-->
-      <!--</button>-->
-      <!--<a href="/" class="navbar-brand">Home</a>-->
-    <!--</div>-->
-    <!--<nav class="collapse navbar-collapse" role="navigation">-->
-      <!--<ul class="nav navbar-nav">-->
-
-      <!--</ul>-->
-      <!--<ul class="nav navbar-right navbar-nav">-->
-        <!--<li class="dropdown">-->
-          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>-->
-          <!--<ul class="dropdown-menu" style="padding:12px;">-->
-            <!--<form class="form-inline">-->
-              <!--<button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">-->
-            <!--</form>-->
-          <!--</ul>-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</nav>-->
-  <!--</div>-->
-<!--</header>-->
-
-    <div class="wrapper">
-      <div class="headerContainer">
-        <div id="videoHolder">
-          <div id="sliderContainer">
-            <div id="theTarget">
-              <% for(var i=0; i<posts.length;i++){
-              if(posts[i]['featured']===true) {
-              %>
-              <div style="background-image: url(img/tacotest.png)" class="featureSlider">
-                <img class="featuredFlag" src="./img/FeaturedFlag2x.png">
-                <h1 class="featuredTitle"><%=posts[i]['longTitle']%></h1>
-                <p class="featuredName">By <%=posts[i]['author']%></p>
-              </div>
-              <%}}%>
-            </div>
-          </div>
-        </div>
-      </div>
+<%- include partials/nav.ejs %>
 
 
-      <% for(var i=0; i<posts.length;i++){
-        if(posts[i]['featured']===false) {
-      %>
-      <div class="post">
-        <div class="post-content">
-          <div class="post-small-title">
-            <%=posts[i]['smallTitle']%></div>
-          <img class = "post-img" src="img/leos.png" alt="tacos and beer"/>
-          <div class="post-title"><%=posts[i]['longTitle']%>
-          </div>
-          <div class="post-author">by <span class="pink"><%=posts[i]['author']%></span> <%=posts[i]['date']%></div>
-        </div>
-      </div>
-      <%}}%>
-      <div style="height: 200px"></div>
+
+<div class="wrapper-article">
+  <div class="article">
+    <div class="header">
+      <div class="article-long-title"><h1><%=list[0]['longTitle']%></h1></div>
+      <div class="list-city"><h4><%=list[0]['city']%></h4></div>
+      <div class="post-author">by <span class="pink"><%=list[0]['author']%></span> <%=list[0]['date']%></div>
+      <hr class="pink">
     </div>
-                                                
-                                                                                
+    <%for (var i = 0; i < list[0]['restaurants'].length; i++) {%>
+    <div class="wide-image">
+      <img class="post-img" src=<%=list[0]['restaurants'][i]['restImageLink']%>  alt=<%=list[0]['restaurants'][i]["restName"]%> />
+      <p class="img-caption list-img-caption"><%=(i + 1) + '. ' + list[0]['restaurants'][i]["restName"]%></p>
+    </div>
+    <div class="article-text">
+      <p><%=list[0]['restaurants'][i]["restDescription"]%></p>
+      <div class="summary">
+        <p class="list"><%=list[0]['restaurants'][i]["restAddress"]%></p>
+        <p class="list"><%=list[0]['restaurants'][i]["restPhone"]%></p>
+        <a href= <%=list[0]['restaurants'][i]["restURL"]%>><p class="list"><%=list[0]['restaurants'][i]["restURL"]%></p></a>
+      </div>
+  </div>
+    <iframe class="article-map" width="100%" height="200" frameborder="0" style="border:0"
+            src= <%= "https://www.google.com/maps/embed/v1/place?q=" + encodeURIComponent(list[0]['restaurants'][i]["restAddress"]) + "&key=AIzaSyDhKF55gObV4VaTLnTcS5wS5wsHHJSiZMI" %> allowfullscreen>
+    </iframe>
+    <% } %>
+
+  <div style="height: 200px"></div>
+</div>
+
+
 <hr>
 
 <div class="container" id="footer">
   <div class="row">
     <div class="col col-sm-12">
-      
+
       <h1>Follow Us</h1>
       <div class="btn-group">
-       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
-	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
-	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+        <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+        <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+        <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
       </div>
-      
+
     </div>
   </div>
 </div>
@@ -148,25 +60,8 @@
 
 <hr>
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <ul class="list-inline">
-          <li><i class="icon-facebook icon-2x"></i></li>
-          <li><i class="icon-twitter icon-2x"></i></li>
-          <li><i class="icon-google-plus icon-2x"></i></li>
-          <li><i class="icon-pinterest icon-2x"></i></li>
-        </ul>
-        
-      </div>
-      <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="">tacos and beer</a></p>
-      </div>
-    </div>
-  </div>
-</footer>
-	<!-- script references -->
-    <script src="js/skippr.js"></script>
-	</body>
+<%- include partials/footer.ejs %>
+<!-- script references -->
+
+</body>
 </html>

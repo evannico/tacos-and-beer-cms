@@ -7,7 +7,6 @@ $(document).ready(function() {
         speed: 600,
         logs : true,
         arrows: true,
-        navType: 'bubble',
+        navType: 'bubble'
     });
 });
-

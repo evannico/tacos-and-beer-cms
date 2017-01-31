@@ -8,7 +8,8 @@ var MongoClient = require('mongodb').MongoClient;
 
 var index = require('./routes/index');
 var articles = require('./routes/articles');
-var dashboard = require('./routes/dashboard');
+var articledashboard = require('./routes/articledashboard');
+var listdashboard = require('./routes/listdashboard');
 
 var app = express();
 
@@ -29,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/articles', articles);
-app.use('/dashboard', dashboard);
+app.use('/articledashboard', articledashboard);
+app.use('/listdashboard', listdashboard);
 
 app.get('/saved', function(req, res) {
   res.render('saved');

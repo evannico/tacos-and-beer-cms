@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+        <%- include partials/head.ejs %>
+
+
+
+      <script>
+
+      </script>
+
+	</head>
+	<body style="background: lightgray">
+
+    <%- include partials/nav.ejs %>
+
+    <div class="wrapper" style="margin-top:50px;padding-left:10px;">
+      <a href="/listDashboard"><p>Head to List Dashboard</p></a>
+      <h1>Add An Article</h1>
+      <form action="/articledashboard/addArticle" method="POST" id="articleForm">
+        <div class="form-group">
+          <label for="smallTitleInput">Short Title</label>
+          <input type="text" placeholder="Short Title" name="smallTitle">
+        </div>
+        <div class="form-group">
+          <label for="longTitleInput">Long Title</label>
+          <input type="text" placeholder="Long Title" name="longTitle">
+        </div>
+        <div class="form-group">
+          <label for="authorInput">Author</label>
+          <input type="text" placeholder="Author" name="author">
+        </div>
+        <div class="form-group">
+          <label for="dateInput">Date</label>
+          <input type="date" placeholder="Date" name="date">
+        </div>
+        <div class="form-group">
+          <label for="featuredInput">Featured</label>
+          <select name="Featured">
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+        </div>
+        <div class="form-group" style="visibility: hidden">
+          <label for="listInput">List</label>
+          <select name="List">
+            <option value="false">False</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="listInput">Image Link(Post Image Direct Link)</label>
+          <input type="text" placeholder="Image Link" name="imageLink">
+        </div>
+        <!--<div class="form-group">-->
+          <!--<label for="imageInput">Image </label>-->
+          <!--<input type="file" name="articleImage" accept="image/*" style="width:160px">-->
+        <!--</div>-->
+        <div class="form-group">
+          <label for="imageCaptionInput">Image Caption</label>
+          <input type="text" placeholder="Image Caption" name="imageCaption">
+        </div>
+        <div class="form-group">
+          <label for="paragraphInput">Article Text</label>
+          <textarea type="text" placeholder="Article Text" name="paragraph"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="restNameInput">Restaurant Name</label>
+          <input type="text" placeholder="Restaurant Name" name="restName">
+        </div>
+        <div class="form-group">
+          <label for="restLocationInput">Restaurant Location</label>
+          <input type="text" placeholder="1515 S La Brea Ave, Los Angeles, CA 90019" name="restLocation">
+        </div>
+        <div class="form-group">
+          <label for="restPhoneInput">Restaurant Phone Number</label>
+          <input type="text" placeholder="(323) 346-2001" name="restPhone">
+        </div>
+        <div class="form-group">
+          <label for="restHoursInput">Restaurant Hours</label>
+          <input type="text" placeholder="M-F 10AM-11PM" name="restHours">
+        </div>
+        <div class="form-group">
+          <label for="restMenuInput">Restaurant Menu Link</label>
+          <input type="text" placeholder="http://www.leostacostruck.com/menu.html" name="restMenu">
+        </div>
+        <div class="form-group">
+          <label for="tacoInput">Taco Rating (0-5)</label>
+          <input type="number" placeholder="1" name="taco" max="5">
+        </div>
+        <div class="form-group">
+          <label for="beerInput">Beer Rating (0-5)</label>
+          <input type="number" placeholder="1" name="beer" max="5">
+        </div>
+        <div class="form-group">
+          <label for="moneyInput">Money Rating (0-5)</label>
+          <input type="number" placeholder="1" name="money" max="5">
+        </div>
+        <div class="form-group">
+          <label for="fireInput">Fire Rating (0-5)</label>
+          <input type="number" placeholder="1" name="lit" max="5">
+        </div>
+        <div class="form-group">
+          <label for="tagsInput">Tags</label>
+          <input type="text" placeholder="Noah Johnson, DTLA, Tacos" name="tags">
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <%- include partials/footer.ejs %>
+	<!-- script references -->
+
+	</body>
+</html>

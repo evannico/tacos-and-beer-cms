@@ -1,2 +1,8 @@
 .idea/
 node_modules/
+config
+dump.rdb
+npm-debug.log
+public/javascripts/dummyData.js
+views/secret.ejs
+public/javascripts/dummyData.js

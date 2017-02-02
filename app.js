@@ -5,11 +5,21 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
+var config = require('./config/config');
+
+
+var mongoose = require("mongoose");
+var passport = require("passport");
+var LocalStrategy = require("passport-local");
+
+mongoose.connect("mongodb://localhost/auth_demo_app");
 
 var index = require('./routes/index');
 var articles = require('./routes/articles');
 var articledashboard = require('./routes/articledashboard');
 var listdashboard = require('./routes/listdashboard');
+var login = require('./routes/login');
+var register = require('./routes/register');
 
 var app = express();
 
@@ -28,10 +38,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(require("express-session")({
+    secret: config.secret,
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+var User = require('./models/user');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
 app.use('/', index);
 app.use('/articles', articles);
 app.use('/articledashboard', articledashboard);
 app.use('/listdashboard', listdashboard);
+
+app.use('/login', login);
+app.use('/register', register);
 
 app.get('/saved', function(req, res) {
   res.render('saved');
@@ -56,5 +85,11 @@ app.use(function(err, req, res, next) {
 });
 
 
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
 
 module.exports = app;

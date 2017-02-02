@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient
     , assert = require('assert');
+var config = require('../config/config');
 
 // Connection URL
-var url = 'mongodb://evannico:tacoandbeeradmin1@ds015774.mlab.com:15774/tacos-and-beer';
+var url = config.mlabarticle;
 
 /* GET Home Page. */
 router.get('/', function(req, res, next) {

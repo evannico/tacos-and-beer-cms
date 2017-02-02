@@ -2,17 +2,19 @@ var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient
     , assert = require('assert');
+var config = require('../config/config');
+var misc = require('../config/misc');
 
 // Connection URL
-var url = 'mongodb://evannico:tacoandbeeradmin1@ds015774.mlab.com:15774/tacos-and-beer';
+var url = config.mlabarticle;
 
 /* GET dashboard page. */
-router.get('/', function(req, res, next) {
+router.get('/', misc.isLoggedIn, function(req, res, next) {
     res.render('listDashboard');
 });
 
 
-router.post('/addArticle', function(req, res) {
+router.post('/addArticle', misc.isLoggedIn, function(req, res) {
 
     console.log(req.body);
 
@@ -90,5 +92,6 @@ router.post('/addArticle', function(req, res) {
 
 
 });
+
 
 module.exports = router;

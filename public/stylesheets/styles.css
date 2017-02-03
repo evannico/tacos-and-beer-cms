@@ -18,8 +18,8 @@ body {
   font-weight: 300;
 }
 h1 {
-  font-family: 'Concert One';
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Concert One';
   color: white;
   text-align: center;
 }
@@ -54,8 +54,8 @@ hr {
 }
 
 a .post-title {
-  font-family: 'Concert One';
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Concert One';
   font-size: 18px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -146,13 +146,13 @@ a .post-title {
 }
 
 #nav-text {
-  font-family: 'Concert One';
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Concert One';
 }
 .post-small-title {
   color: #858585;
-  font-family: 'Concert One';
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Concert One';
   text-align: left;
   padding-top: 4px;
   font-size: 16px;
@@ -215,8 +215,8 @@ a .post-title {
 }
 
 .img-caption {
-  font-family: 'Concert One';
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Concert One';
   position: relative;
   left: 15px;
   bottom: 30px;
@@ -233,8 +233,8 @@ a .post-title {
 }
 
 .restaurant-name {
-  font-family: 'Concert One';
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Concert One';
   font-size: 25px;
   text-align: center;
   color: gray;
@@ -260,8 +260,8 @@ a .post-title {
 }
 
 .list-city {
-  font-family: 'Concert One';
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Concert One';
   color: #858585;
 }
 

@@ -12,7 +12,7 @@ var mongoose = require("mongoose");
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 
-mongoose.connect("mongodb://localhost/auth_demo_app");
+mongoose.connect(config.MONGO_URI);
 
 var index = require('./routes/index');
 var articles = require('./routes/articles');
